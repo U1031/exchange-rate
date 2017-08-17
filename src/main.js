@@ -2,19 +2,17 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import "expose-loader?$!expose-loader?jQuery!jquery";
+// import "expose-loader?$!expose-loader?jQuery!jquery";
 import semantic from "semantic-ui-css/semantic.min.css";
 import axios from "axios";
 import VueRouter from "vue-router";
 
+import Mainpage from './components/Mainpage'
 
 Vue.prototype.$http = axios;
 
-
-
 Vue.use(semantic);
 Vue.use(VueRouter);
-
 
 const routes = [{
         path: "/",
@@ -34,10 +32,10 @@ const router = new VueRouter({
     routes
 });
 
-
 /* eslint-disable no-new */
 new Vue({
+    router,
     el: '#app',
     template: '<App/>',
     components: { App }
-}).$mount('#app')
+}).$mount('#app');
