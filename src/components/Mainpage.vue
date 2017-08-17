@@ -1,13 +1,14 @@
 <template>
   <div class="mainpage">
     <div class='ui centered grid container'>
-      <div class='twelve wide column center aligned'>
+      <div class='twelve wide column'>
         <div>
-          <h1 class='ui header'>
+          <h1 class='ui centered header'>
             <b>Currency Converter</b>
           </h1>
         </div>
         <div class='ui divider'></div>
+  
         <div class='ui form'>
           <div class='six wide field'>
             <label>
@@ -50,9 +51,10 @@
         </div>
   
         <div class='ui divider'></div>
-        <div class='footer'>
-          <label>2017 Created by Jin-Seong, Yu</label><br>
-          <label>Exchage rates provided by Yahoo Open Rates.</label>
+        <div class='ui vertical center aligned segment'>
+          <label>2017 Created by <a v-bind:href='githubURL'>Jin-Seong, Yu</a></label>
+          <br>
+          <label>Exchage rates provided by <a v-bind:href='apiURL'>Yahoo Open API</a></label>
         </div>
       </div>
     </div>
@@ -64,6 +66,8 @@ export default {
   name: 'mainpage',
   data() {
     return {
+      githubURL: 'https://github.com/U1031',
+      apiURL: 'https://developer.yahoo.com/yql/console/'
     }
   }
 }
@@ -79,6 +83,6 @@ export default {
 }
 
 .ui.form {
-  /*border: 0.5px solid green;*/
+  border: 0.5px solid green;
 }
 </style>
