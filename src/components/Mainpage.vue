@@ -1,61 +1,80 @@
 <template>
   <div class="mainpage">
     <div class='ui centered grid container'>
-      <div class='twelve wide column'>
-        <div>
-          <h1 class='ui centered header'>
-            <b>Currency Converter</b>
-          </h1>
+      <div class='ui five wide center aligned column'>
+  
+        <!--header-->
+        <div class='row'>
+          <div class='ui basic segment'>
+            <h1 class='ui centered header'>
+              <b>Currency Converter</b>
+            </h1>
+          </div>
         </div>
+  
         <div class='ui divider'></div>
   
-        <div class='ui form'>
-          <div class='six wide field'>
-            <label>
-              <b>Amount</b>
-            </label>
-            <input type='text' placeholder="Enter positive currency amount">
-          </div>
-  
-          <div class='six wide field'>
-            <label>
-              <b>From Currency</b>
-            </label>
-            <div class='ui selection dropdown'>
-              <input type='hidden' name='country'>
-              <i class='dropdown icon'></i>
-              <div class='default text'>Select a currency</div>
-              <div class='menu'>
-                <div class='item' data-value='0'>Fake</div>
+        <!--body-->
+        <div class='row'>
+          <div class='ui basic left aligned segment'>
+            <div class='ui form'>
+              <div class='full wide field'>
+                <label>
+                  <b>Amount</b>
+                </label>
+                <input type='text' placeholder="Enter positive currency amount">
               </div>
+  
+              <div class='full wide field'>
+                <label>
+                  <b>From Currency</b>
+                </label>
+                <div class='ui selection dropdown'>
+                  <input type='hidden' name='country'>
+                  <i class='dropdown icon'></i>
+                  <div class='default text'>Select a currency</div>
+                  <div class='menu'>
+                    <div class='item' data-value='0'>Fake</div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class='full wide field'>
+                <label>
+                  <b>To Currency</b>
+                </label>
+                <div class='ui selection dropdown'>
+                  <input type='hidden' name='country'>
+                  <i class='dropdown icon'></i>
+                  <div class='default text'>Select a currency</div>
+                  <div class='menu'>
+                    <div class='item' data-value='0'>Fake</div>
+                  </div>
+                </div>
+              </div>
+  
             </div>
           </div>
-  
-          <div class='six wide field'>
-            <label>
-              <b>To Currency</b>
-            </label>
-            <div class='ui selection dropdown'>
-              <input type='hidden' name='country'>
-              <i class='dropdown icon'></i>
-              <div class='default text'>Select a currency</div>
-              <div class='menu'>
-                <div class='item' data-value='0'>Fake</div>
-              </div>
-            </div>
-          </div>
-  
-          <div class='six wide field'>
+          <div class='ui basic sement'>
             <div class='ui basic button'>Convert</div>
           </div>
         </div>
   
         <div class='ui divider'></div>
-        <div class='ui vertical center aligned segment'>
-          <label>2017 Created by <a v-bind:href='githubURL'>Jin-Seong, Yu</a></label>
-          <br>
-          <label>Exchage rates provided by <a v-bind:href='apiURL'>Yahoo Open API</a></label>
+  
+        <!--footer-->
+        <div class='row'>
+          <div class='ui basic segment'>
+            <label>2017 Created by
+              <a v-bind:href='githubURL'>Jin-Seong, Yu</a>
+            </label>
+            <br>
+            <label>Exchage rates provided by
+              <a v-bind:href='apiURL'>Yahoo Open API</a>
+            </label>
+          </div>
         </div>
+  
       </div>
     </div>
   </div>
