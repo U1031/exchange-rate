@@ -52,6 +52,14 @@
                   </div>
                 </div>
               </div>
+
+              <div class='full wide field'>
+                <label>
+                  <b>Result</b>
+                </label>
+                <div class='ui tertiary inverted segment'>
+                </div>
+              </div>
   
             </div>
           </div>
@@ -98,10 +106,10 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
-  border: 0.5px solid red;
+  /*border: 0.5px solid red;*/
 }
 
 .ui.form {
-  border: 0.5px solid green;
+  /*border: 0.5px solid green;*/
 }
 </style>

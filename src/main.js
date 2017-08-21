@@ -7,12 +7,17 @@ import semantic from "semantic-ui-css/semantic.min.css";
 import axios from "axios";
 import VueRouter from "vue-router";
 
+
 import Mainpage from './components/Mainpage'
 
 Vue.prototype.$http = axios;
 
 Vue.use(semantic);
 Vue.use(VueRouter);
+
+const currency = require('./currency.json')
+
+console.log(currency)
 
 const routes = [{
         path: "/",
