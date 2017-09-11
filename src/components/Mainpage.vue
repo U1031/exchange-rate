@@ -67,12 +67,12 @@
             </div>
           </div>
           <div class='ui basic sement'>
-            <div class='ui basic button'>Convert</div>
+            <div class='ui basic button' v-on:click='test'>Convert</div>
           </div>
         </div>
   
         <div class='ui divider'></div>
-  
+
         <!--footer-->
         <div class='row'>
           <div class='ui basic segment'>
@@ -92,14 +92,36 @@
 </template>
 
 <script>
+// const currency = require('./currency.json')
+
+
 export default {
   name: 'mainpage',
   data() {
     return {
       githubURL: 'https://github.com/U1031',
-      apiURL: 'https://developer.yahoo.com/yql/console/'
+      apiURL: 'https://developer.yahoo.com/yql/console/',
+      money_code : []
     }
+  },
+  methods: {
+    test: function(){
+      // console.log('hihihi')
+      const currency = require('../currency.json')
+      // console.log(currency)
+      // console.log(this.money_code)
+      // console.log(this.money_code[0])
+      console.log(Object.keys(this.money_code)[0])
+
+    }
+  },
+  created(){
+    this.money_code = require('../currency.json')
+    // this.$nextTick(function(){
+    //   this.money_code = require('../currnecy.json')
+    // })
   }
+
 }
 </script>
 

@@ -18,7 +18,7 @@ Vue.use(VueRouter);
 
 const currency = require('./currency.json')
 
-console.log(currency)
+// console.log(currency)
 
 const routes = [{
         path: "/",
