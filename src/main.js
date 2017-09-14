@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import "expose-loader?$!expose-loader?jQuery!jquery";
 import semantic from "semantic-ui-css/semantic.min.css";
+import "semantic-ui-css/semantic.js"
 import "semantic-ui-popup/popup.js"
 import axios from "axios";
 import VueRouter from "vue-router";

@@ -2,7 +2,7 @@
   <div class="mainpage">
     <div class='ui centered grid container'>
       <div class='ui five wide center aligned column'>
-  
+
         <!--header-->
         <div class='row'>
           <div class='ui basic segment'>
@@ -11,10 +11,9 @@
             </h1>
           </div>
         </div>
-  
 
         <div class='ui divider'></div>
-  
+
         <!--body-->
         <div class='row'>
           <div class='ui basic left aligned segment'>
@@ -25,34 +24,33 @@
                 </label>
                 <input type='text' placeholder="Enter positive currency amount">
               </div>
-  
+
               <div class='full wide field'>
                 <label>
                   <b>From Currency</b>
                 </label>
-                <div class='ui selection dropdown'>
+                <div class='ui from selection dropdown'>
                   <input type='hidden' name='country'>
                   <i class='dropdown icon'></i>
-                  <div class='default text'>Select a currency</div>
+                  <div class='default text' v-on:click='from_dropdown_function'>Select a currency</div>
                   <div class='menu'>
                     <!--<div class='item' data-value='0'>KRW</div>-->
                     <!--<div class='item' data-value='1'>USD</div>-->
-                    <!--<div class='item' v-for="code in money_code">{{code}}</div>-->
+                    <div class='item' v-for="code in money_code">{{code.code}}</div>
                   </div>
                 </div>
               </div>
-  
+
               <div class='full wide field'>
                 <label>
                   <b>To Currency</b>
                 </label>
-                <div class='ui selection dropdown'>
+                <div class='ui to selection dropdown'>
                   <input type='hidden' name='country'>
                   <i class='dropdown icon'></i>
-                  <div class='default text'>Select a currency</div>
+                  <div class='default text' v-on:click='to_dropdown_function'>Select a currency</div>
                   <div class='menu'>
-                    <div class='item' data-value='0'>KRW</div>
-                    <div class='item' data-value='1'>USD</div>
+                    <div class='item' v-for="code in money_code">{{code.code}}</div>
                   </div>
                 </div>
               </div>
@@ -64,14 +62,14 @@
                 <div class='ui tertiary inverted segment'>
                 </div>
               </div>
-  
+
             </div>
           </div>
           <div class='ui basic sement'>
             <div class='ui basic button' v-on:click='test'>Convert</div>
           </div>
         </div>
-  
+
         <div class='ui divider'></div>
 
         <!--footer-->
@@ -86,7 +84,7 @@
             </label>
           </div>
         </div>
-  
+
       </div>
     </div>
   </div>
@@ -102,19 +100,25 @@ export default {
     return {
       githubURL: 'https://github.com/U1031',
       apiURL: 'https://developer.yahoo.com/yql/console/',
-      money_code : []
+      money_code: []
     }
   },
   methods: {
-    test: function(){
+    test: function() {
       // console.log(Object.keys(this.money_code))
       // console.log(Object.keys(this.money_code).length)
-      for(var i = 0; i < Object.keys(this.money_code).length; i++){
+      for (var i = 0; i < Object.keys(this.money_code).length; i++) {
         console.log(Object.keys(this.money_code)[i]);
       }
+    },
+    from_dropdown_function: function() {
+      $('.ui.from.selection.dropdown').dropdown()
+    },
+    to_dropdown_function: function(){
+      $('.ui.to.selection.dropdown').dropdown()
     }
   },
-  created(){
+  created() {
     this.money_code = require('../currency.json')
   }
 
