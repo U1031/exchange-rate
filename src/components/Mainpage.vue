@@ -35,8 +35,9 @@
                   <i class='dropdown icon'></i>
                   <div class='default text'>Select a currency</div>
                   <div class='menu'>
-                    <div class='item' data-value='0'>KRW</div>
-                    <div class='item' data-value='1'>USD</div>
+                    <!--<div class='item' data-value='0'>KRW</div>-->
+                    <!--<div class='item' data-value='1'>USD</div>-->
+                    <!--<div class='item' v-for="code in money_code">{{code}}</div>-->
                   </div>
                 </div>
               </div>
@@ -106,20 +107,15 @@ export default {
   },
   methods: {
     test: function(){
-      // console.log('hihihi')
-      // const currency = require('../currency.json')
-      // console.log(currency)
-      // console.log(this.money_code)
-      // console.log(this.money_code[0])
-      console.log(Object.keys(this.money_code))
-
+      // console.log(Object.keys(this.money_code))
+      // console.log(Object.keys(this.money_code).length)
+      for(var i = 0; i < Object.keys(this.money_code).length; i++){
+        console.log(Object.keys(this.money_code)[i]);
+      }
     }
   },
   created(){
     this.money_code = require('../currency.json')
-    // this.$nextTick(function(){
-    //   this.money_code = require('../currnecy.json')
-    // })
   }
 
 }
