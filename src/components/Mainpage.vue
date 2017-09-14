@@ -107,11 +107,11 @@ export default {
   methods: {
     test: function(){
       // console.log('hihihi')
-      const currency = require('../currency.json')
+      // const currency = require('../currency.json')
       // console.log(currency)
       // console.log(this.money_code)
       // console.log(this.money_code[0])
-      console.log(Object.keys(this.money_code)[0])
+      console.log(Object.keys(this.money_code))
 
     }
   },
