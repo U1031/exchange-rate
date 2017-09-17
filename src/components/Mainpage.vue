@@ -34,9 +34,7 @@
                   <i class='dropdown icon'></i>
                   <div class='default text' v-on:click='from_dropdown_function'>Select a currency</div>
                   <div class='menu'>
-                    <!--<div class='item' data-value='0'>KRW</div>-->
-                    <!--<div class='item' data-value='1'>USD</div>-->
-                    <div class='item' v-for="code in money_code">{{code.code}}</div>
+                    <div class='item' v-for="code in money_code" v-on:click='from_code_name(code.code)'>{{code.code}}</div>
                   </div>
                 </div>
               </div>
@@ -50,7 +48,7 @@
                   <i class='dropdown icon'></i>
                   <div class='default text' v-on:click='to_dropdown_function'>Select a currency</div>
                   <div class='menu'>
-                    <div class='item' v-for="code in money_code">{{code.code}}</div>
+                    <div class='item' v-for="code in money_code" v-on:click='to_code_name(code.code)'>{{code.code}}</div>
                   </div>
                 </div>
               </div>
@@ -100,22 +98,32 @@ export default {
     return {
       githubURL: 'https://github.com/U1031',
       apiURL: 'https://developer.yahoo.com/yql/console/',
-      money_code: []
+      money_code: [],
+      to_code: '',
+      from_code: ''
     }
   },
   methods: {
     test: function() {
-      // console.log(Object.keys(this.money_code))
-      // console.log(Object.keys(this.money_code).length)
-      for (var i = 0; i < Object.keys(this.money_code).length; i++) {
-        console.log(Object.keys(this.money_code)[i]);
-      }
+      // for (var i = 0; i < Object.keys(this.money_code).length; i++) {
+      //   console.log(Object.keys(this.money_code)[i]);
+      // }
+      console.log(this.to_code + ' and '+ this.from_code)
+      
     },
     from_dropdown_function: function() {
       $('.ui.from.selection.dropdown').dropdown()
     },
     to_dropdown_function: function(){
       $('.ui.to.selection.dropdown').dropdown()
+    },
+    from_code_name: function(name){
+      console.log(name)
+      this.from_code = name
+    },
+    to_code_name: function(name){
+      console.log(name)
+      this.to_code = name
     }
   },
   created() {
