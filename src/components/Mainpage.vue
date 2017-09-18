@@ -108,20 +108,30 @@ export default {
       // for (var i = 0; i < Object.keys(this.money_code).length; i++) {
       //   console.log(Object.keys(this.money_code)[i]);
       // }
-      console.log(this.to_code + ' and '+ this.from_code)
-      
+      // console.log(this.to_code + ' and '+ this.from_code)
+
+      const baseURI = 'http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%3D%22USDKRW%22&format=xml&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys'
+      this.$http.get(`${baseURI}`)
+        .then((result) => {
+          console.log(result)
+        })
+        .catch(function(error) {
+          console.log(error)
+          window.alert(error)
+        })
+
     },
     from_dropdown_function: function() {
       $('.ui.from.selection.dropdown').dropdown()
     },
-    to_dropdown_function: function(){
+    to_dropdown_function: function() {
       $('.ui.to.selection.dropdown').dropdown()
     },
-    from_code_name: function(name){
+    from_code_name: function(name) {
       console.log(name)
       this.from_code = name
     },
-    to_code_name: function(name){
+    to_code_name: function(name) {
       console.log(name)
       this.to_code = name
     }
